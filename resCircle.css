@@ -1,0 +1,31 @@
+.circleContainer{
+    background: blue;
+    height: 100px;
+    width: 100px;
+}
+
+.resCircle{
+    border-radius: 50%;
+    width: 100%;
+    padding-bottom: 100%;
+    background: white;
+    animation: resPulse 2s infinite;
+    margin: auto
+}
+
+
+@keyframes resPulse {
+    0%{
+        padding-bottom: 100%;
+    }
+    50%{
+        /* padding-bottom: 0%;
+        width: 0%; */
+        transform: scale(0);
+    }
+    100%{
+        padding-bottom: 100%;
+        width: 100%;
+        transform: scale(1);
+    }
+}
