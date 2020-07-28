@@ -19,8 +19,6 @@
         padding-bottom: 100%;
     }
     50%{
-        /* padding-bottom: 0%;
-        width: 0%; */
         transform: scale(0);
     }
     100%{
