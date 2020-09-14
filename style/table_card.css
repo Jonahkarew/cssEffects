@@ -1,0 +1,67 @@
+body {
+  background: #f9f9f9;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 640px;
+}
+
+.cards-table {
+  width: 100%;
+}
+
+.cards-table thead {
+  display: none;
+}
+
+.cards-table tr {
+  display: block;
+  margin-bottom: 1.5rem;
+  padding: 1rem 0.5rem 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+}
+
+.cards-table td {
+  display: inline-block;
+  margin: 0 0.5rem 0.5rem 0;
+  padding: 0.5rem;
+  text-align: left;
+  background-color: white;
+  border: 1px solid rgba(88, 194, 95, 0.5);
+}
+
+.cards-table td:before {
+  float: left;
+  margin: -0.5rem 0.5rem -0.5rem -0.5rem;
+  padding: 0.625rem 0.5rem 0.625rem;
+  font-size: 0.75em;
+  font-weight: bold;
+  background: rgba(88, 194, 95, 0.1);
+  color: #58C25F;
+}
+
+.cards-table td:before {
+  content: attr(data-label) ": ";
+}
+
+.cards-table td[data-label*="Column D"] {
+  display: block;
+  float: none;
+}
+
+.cards-table td[data-label*="Column D"]:before {
+  display: block;
+  margin-right: -0.5rem;
+  margin-bottom: 0.5rem;
+  float: none;
+}
+
+.cards-table td:empty {
+  display: none;
+}
+/*# sourceMappingURL=table_card.css.map */

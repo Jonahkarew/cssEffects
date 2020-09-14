@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style/table_card.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>It doen't look like it, but it is a table!</h1>
+    <table class="cards-table">
+      <thead>
+        <tr>
+          <th>Column A</th>
+          <th>Column B</th>
+          <th>Column C</th>
+          <th>Column D</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Lorem</td>
+          <td>Ipsum</td>
+          <td>Dolor</td>
+          <td>Sit amet, consectetuer adipiscing elit. Sed fringilla porttitor diam. Cras interdum, nisi ac sagittis
+            lacinia, magna nunc ultricies sem, a ultricies arcu nulla eget massa. Maecenas in mi at justo euismod
+            eleifend.</td>
+        </tr>
+        <tr>
+          <td>Curabitur</td>
+          <td>Tempus</td>
+          <td>Pharetra Arcu</td>
+          <td>Praesent dictum ligula non risus dictum congue. Morbi placerat augue vel massa. Morbi tempus, elit id
+            pulvinar rhoncus, magna elit consequat erat, in eleifend sapien nunc eget turpis. Duis iaculis interdum sem.
+            Sed facilisis felis in dui. Vestibulum suscipit.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>Another table, with different headers</h1>
+    <table class="cards-table">
+      <thead>
+        <tr>
+          <th>Column 1</th>
+          <th>Column 2</th>
+          <th>Column 3</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>aliquam</td>
+          <td>tempus rutrum</td>
+          <td>placerat vitae</td>
+        </tr>
+        <tr>
+          <td>vestibulum</td>
+          <td>mauris</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script>
+    var tables = $('.cards-table');
+
+    // Create an array containing all table headers
+    var table_headers = [];
+    tables.each(function () {
+      var th = [];
+      $(this).find('thead th').each(function () {
+        th.push($(this).text());
+      });
+      table_headers.push(th);
+    });
+
+    // Add a data-label attribute to each cell with the value of the corresponding column header
+    // Iterate through each table
+    tables.each(function (table) {
+      var table_index = table;
+      // Iterate through each row
+      $(this).find('tbody tr').each(function () {
+        // Finally iterate through each column/cell
+        $(this).find('td').each(function (column) {
+          $(this).attr('data-label', table_headers[table_index][column]);
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
