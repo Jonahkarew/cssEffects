@@ -1,0 +1,14 @@
+/* table{
+    width: 100%;
+    text-align: center;
+    border-collapse: separate;
+    display: flex;
+}
+
+th, td {
+    border: black 1px solid;
+}
+
+tr {
+    flex-direction: column;
+} */

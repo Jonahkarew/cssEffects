@@ -1,47 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <title>table tester</title>
+    <!-- <link rel="stylesheet" href="./style/tabletest.css"> -->
     <style>
-        table{
-            width: 100%;
-        }
-        tbody:nth-child(1){
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        /* .row{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+         /* tbody, tfoot, thead, tr, th, td{
+            margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
         } */
+        .card{
+            display: flex;
+            flex-direction: column;
+        }
+        #thistable{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
     </style>
 </head>
+
 <body>
-    <table>
-        <tr>
-            <th>thing1</th>
-            <th>thing2</th>
-            <th>thing3</th>
-            <th>thing4</th>
-        </tr>
-        <tr class="row">
-            <td>row1item1</td>
-            <td>row1item2</td>
-            <td>row1item3</td>
-            <td>row1item4</td>
-        </tr>
-        <tr class="row">
-            <td>row2item1</td>
-            <td>row2item2</td>
-            <td>row2item3</td>
-            <td>row2item4</td>
-        </tr>
-    </table>
+    <div class="container">
+        <table id="thistable">
+            <tr>
+                <td class="image1-field">
+                    <span class="image-field-wrap default-image pdb-image image-field-wrap display-mode-image">
+                        <img src="./assets/table_assets/bandit.jpeg" alt="">
+                    </span>
+                </td>
+                <td>row1item2</td>
+                <td>row1item3</td>
+                <td>row1item4</td>
+            </tr>
+            <tr>
+                <td>row2item1</td>
+                <td>row2item2</td>
+                <td>row2item3</td>
+                <td>row2item4</td>
+            </tr>
+        </table>
+
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $("tr").addClass("card").css( "align-items", "center")
+        $("tr").children().first().children().removeClass("image-field-wrap default-image pdb-image image-field-wrap display-mode-image")
+        $("tr").children().first().children().children().addClass("card-img-top").css("width", "300px")
+        $("tr td:nth-child(2)").css("color", "red")
+    </script>
 </body>
+
 </html>
